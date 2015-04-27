@@ -24,6 +24,11 @@ describe(Parcel) do
       test_parcel = Parcel.new(4,4,4,10,true)
       expect(test_parcel.cost_to_ship(50)).to(eq(256))
     end
+
+    it('adds a 20%discount based on the size of the parcel') do
+      test_parcel = Parcel.new(1,1,1,1,false)
+      expect(test_parcel.cost_to_ship(1)).to(eq(4))
+    end
   end
 
 end
