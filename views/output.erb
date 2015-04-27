@@ -1,0 +1,10 @@
+<% if @user_entered %>
+<h1>Shipping costs: <%= @cost %></h1>
+
+<% else %>
+<h1>Error: You must provide both dimensions and weight.</h1>
+<% end %>
+
+<form action='/'>
+  <button type="submit" class="btn btn-success">Find more shipping costs</button>
+</form>

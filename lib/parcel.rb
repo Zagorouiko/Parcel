@@ -16,8 +16,8 @@ class Parcel
 
   define_method(:cost_to_ship) do |distance|
     cost = distance * cost_per_mile + @weight * cost_per_pound
-    if volume() >= oversize_volume
-       cost = cost + oversize_fee
+    if volume() >= oversize_fee
+      cost += oversize_fee
     end
     cost
   end
