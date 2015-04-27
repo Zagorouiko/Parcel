@@ -15,6 +15,10 @@ class Parcel
     @height * @length * @width
   end
 
+  define_method(:surface_area) do
+    2*@length*@width + 2*@length*@height + 2*@width*@height
+  end
+
   define_method(:cost_to_ship) do |distance|
     cost = distance * cost_per_mile + @weight * cost_per_pound
     if volume() >= oversize_fee
