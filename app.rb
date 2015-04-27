@@ -13,8 +13,9 @@ get('/output') do
   height = params.fetch('height').to_i
   weight = params.fetch('weight').to_i
   distance = params.fetch('distance').to_i
+  gift_wrap = params.fetch('gift_wrap').==('on')
+  
   parcel = Parcel.new(height, length, width, weight)
-
   @user_entered = ![length, width, height, weight, distance].include?(0)
   @cost = parcel.cost_to_ship(distance)
   erb(:output)
